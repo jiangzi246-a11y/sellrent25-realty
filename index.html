@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-row">
+            <img src="logo.png.jpg" alt="25 Realty logo" class="site-logo">
+            <div class="logo-details">
+                <div class="slogan">ទិញ-លក់ ជួលរហ័ស</div>
+                <div class="contact-line">ទំនាក់ទំនង: 093400885 | 012800885</div>
+            </div>
+        </div>
+        <h1>Looking for /ស្វែងរក</h1>
+    </header>
+
+    <div class="contact-container">
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="phone">Phone Number/លេខទូរស័ព្ទ</label>
+            <input id="phone" name="phone" type="tel" required>
+        </div>
+
+        <div class="form-group">
+            <label>Purpose/គោលបំណង </label>
+            <div class="bot-boxes">
+                <button type="button" class="bot-box active" data-bot="0"> ផ្ទះជួល </button>
+                <button type="button" class="bot-box" data-bot="1"> ទិញផ្ទះ</button>
+                <button type="button" class="bot-box" data-bot="2">ដីជួល</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="company">Budget/កម្រិតថវិកា</label>
+            <input id="company" name="company" type="text">
+        </div>
+
+        <div class="form-group">
+            <label for="project">Location/ទីតាំងដែលចង់បាន</label>
+            <textarea id="project" name="project" rows="6" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
