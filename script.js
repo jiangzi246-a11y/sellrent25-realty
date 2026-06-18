@@ -5,7 +5,7 @@ const BOT_CONFIGS = [
   {
     token: "8811695547:AAG-P5lfw9TF7m3CqXq_3kH6W76PCbDoDO0",
     chatId: "6299153313",
-    name: "ផ្ទះជួល"
+        name: "ផ្ទះជួល"
   },
   {
     token: "7839274736:AAESXx1DqzvV_2Q-EKscnhQsQPZDD8oPcLw",
@@ -94,9 +94,15 @@ if (form) {
 // ========================================
 function formatTelegramMessage(phone, budget, location, botName) {
   const timestamp = new Date().toLocaleString();
+  let msg = `<b>🏠 Property Request Form / ព័ត៌មានស្នើសុំ</b>\n\n`;
+  msg += `<b>Selected Bot / គោលបំណង:</b> ${escapeHtml(botName)}\n`;
+  msg += `<b>Phone / ទូរស័ព្ទ:</b> ${escapeHtml(phone)}\n`;
 
-  let msg = `<b>🏠 Property Request Form</b>\n\n`;
-  msg += `<b>Selected Bot:</b> ${botName}\n`;
+  if (budget) {
+    msg += `<b>Budget / កម្រិតថវិកា:</b> ${escapeHtml(budget)}\n`;
+  }
+
+  msg += `\n<b>Location / ទីតាំងដែលចង់បាន:</b>\n${escapeHtml(location)}\n\n`;
   msg += `<i>Submitted: ${timestamp}</i>`;
 
   return msg;
@@ -116,6 +122,7 @@ function sendToTelegram(message, botIndex) {
   };
 
   console.log('Sending to Telegram...', { url, chatId: config.chatId });
+  console.log('Message payload:', message);
 
   return fetch(url, {
     method: 'POST',
@@ -183,8 +190,10 @@ function showNotification(message, type = 'info') {
 // UTILITIES
 // ========================================
 function escapeHtml(text) {
+  if (text === null || text === undefined) return '';
+  const s = String(text);
   const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-  return text.replace(/[&<>"']/g, m => map[m]);
+  return s.replace(/[&<>"']/g, m => map[m]);
 }
 
 // ========================================
