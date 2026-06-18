@@ -96,7 +96,7 @@ function formatTelegramMessage(phone, budget, location, botName) {
   const timestamp = new Date().toLocaleString();
   let msg = `<b>🏠 Property Request Form / ព័ត៌មានស្នើសុំ</b>\n\n`;
   msg += `<b>Selected Bot / គោលបំណង:</b> ${escapeHtml(botName)}\n`;
-  msg += `<b>Phone / ទូរស័ព្ទ:</b> ${escapeHtml(phone)}\n`;
+  msg += `<b>Phone Number / លេខទូរស័ព្ទ:</b> ${escapeHtml(phone)}\n`;
 
   if (budget) {
     msg += `<b>Budget / កម្រិតថវិកា:</b> ${escapeHtml(budget)}\n`;
