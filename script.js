@@ -92,6 +92,10 @@ if (form) {
 // ========================================
 // FORMAT MESSAGE FOR TELEGRAM
 // ========================================
+if (!message  message.trim() === ''  message.trim() === '.') {
+    console.log('Empty message blocked');
+    return;
+}
 function formatTelegramMessage(phone, budget, location, botName) {
   const timestamp = new Date().toLocaleString();
   let msg = `<b>🏠 Property Request Form / ព័ត៌មានស្នើសុំ</b>\n\n`;
